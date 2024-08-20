@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 
 const ContactForm: React.FC = () => {
@@ -16,7 +16,7 @@ const ContactForm: React.FC = () => {
     <div className="flex justify-center items-center min-h-screen bg-gray-900">
       <form
         onSubmit={handleSubmit}
-        className="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full"
+        className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-3xl"
       >
         <h2 className="text-2xl font-bold text-white mb-6">Contact</h2>
         <p className="text-gray-400 mb-6">

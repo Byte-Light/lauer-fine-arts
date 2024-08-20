@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-black text-white py-12">
+    <section className="bg-gray-800 text-white py-12">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         {/* Left Section: Text Content */}
         <div className="md:w-1/2 text-center md:text-left p-4">
@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
         <div className="md:w-1/2 flex justify-center p-4">
           <div className="relative w-full h-full">
             <Image
-              src="/path-to-your-image.jpg"
+              src="/images/lauer-hero-cover.png"
               alt="Artwork"
               className="object-contain"
               width={500}
@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
       {/* Trusted Seller Badge */}
       <div className="flex justify-center mt-8">
         <Image
-          src="/path-to-your-badge-image.jpg"
+          src="/images/lauer-badge.png"
           alt="Trusted Art Seller"
           className="w-24 h-24"
           width={100}

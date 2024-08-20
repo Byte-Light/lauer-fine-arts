@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-black text-white py-4">
+    <nav className="bg-gray-800 text-white py-4">
       <div className="container mx-auto flex flex-wrap justify-between items-center">
         {/* Brand Name */}
         <div className="text-lg font-bold tracking-widest">
