@@ -1,50 +1,53 @@
-// components/Hero.tsx
-
+"use client";
 import React from "react";
-import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Hero: React.FC = () => {
+  const images = [
+    "/images/lauer-badge.png",
+    "/images/lauer-hero-cover.png",
+    "/images/lauer-badge.png",
+    "/images/lauer-hero-cover.png",
+    "/images/lauer-badge.png",
+  ];
+
+  const settings = {
+    dots: true,
+    fade: true, // Enable fade-in effect
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    arrows: false,
+  };
+
   return (
-    <section className="bg-gray-800 text-white py-12">
-      <div className="container mx-auto flex flex-col md:flex-row items-center">
-        {/* Left Section: Text Content */}
-        <div className="md:w-1/2 text-center md:text-left p-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Lauer Fine Art</h1>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">Lauer Fine Art</h2>
-          <p className="mb-4">
-            Lauer Fine Arts is proud to provide customers with high quality, beautifully framed hand painted art at extremely attractive prices. We have a huge range of styles and sizes encompassing the major historical art movements allowing you to easily match your personal taste and display needs to any setting.
-          </p>
-          <p className="mb-4">
-            You can select from paintings as large as 48 × 72 to as small as 7 × 5 with any other sizes in between to fit your space. Lauer Fine Art is your one-stop shop to find timeless art pieces at an unbeatable value.
-          </p>
-          <p>
-            Our art business has been designated as a Trusted Art Seller with The Art Storefronts Organization, meaning you can shop with confidence, and know that we stand behind the quality and value of our products.
-          </p>
+    <section className="relative bg-gray-900 text-white py-12">
+      <div className="container mx-auto">
+        <div className="slider-container">
+          <Slider {...settings}>
+            {images.map((image, index) => (
+              <div key={index} className="relative h-72 md:h-[500px]">
+                <img
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+                {/* Optional: Add an overlay with text */}
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                  <h2 className="text-2xl md:text-4xl font-bold">
+                    Slide {index + 1}
+                  </h2>
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
-
-        {/* Right Section: Image */}
-        <div className="md:w-1/2 flex justify-center p-4">
-          <div className="relative w-full h-full">
-            <Image
-              src="/images/lauer-hero-cover.png"
-              alt="Artwork"
-              className="object-contain"
-              width={500}
-              height={600}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Trusted Seller Badge */}
-      <div className="flex justify-center mt-8">
-        <Image
-          src="/images/lauer-badge.png"
-          alt="Trusted Art Seller"
-          className="w-24 h-24"
-          width={100}
-          height={100}
-        />
       </div>
     </section>
   );
