@@ -3,6 +3,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 const Hero: React.FC = () => {
   const images = [
@@ -13,23 +14,61 @@ const Hero: React.FC = () => {
     "/images/lauer-badge.png",
   ];
 
+  // Custom Arrow Components
+  const NextArrow = (props: any) => {
+    const { onClick } = props;
+    return (
+      <div
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-3xl cursor-pointer z-20"
+        onClick={onClick}
+      >
+        <FaArrowRight />
+      </div>
+    );
+  };
+
+  const PrevArrow = (props: any) => {
+    const { onClick } = props;
+    return (
+      <div
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-3xl cursor-pointer z-20"
+        onClick={onClick}
+      >
+        <FaArrowLeft />
+      </div>
+    );
+  };
+
   const settings = {
     dots: true,
-    fade: true, // Enable fade-in effect
     infinite: true,
-    speed: 800,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    arrows: false,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    appendDots: (dots: any) => (
+      <div style={{ padding: "10px" }}>
+        <ul style={{ margin: "0px" }}>{dots}</ul>
+      </div>
+    ),
+    customPaging: (i: any) => (
+      <div
+        className="w-4 h-4 bg-gray-400 rounded-full inline-block"
+        style={{
+          border: "1px solid #fff",
+        }}
+      ></div>
+    ),
   };
 
   return (
-    <section className="relative bg-gray-900 text-white py-12">
+    <section className="relative bg-gray-800 text-white py-12">
       <div className="container mx-auto">
-        <div className="slider-container">
+        <div className="slider-container relative">
           <Slider {...settings}>
             {images.map((image, index) => (
               <div key={index} className="relative h-72 md:h-[500px]">
@@ -38,11 +77,11 @@ const Hero: React.FC = () => {
                   alt={`Slide ${index + 1}`}
                   className="w-full h-full object-cover"
                 />
-                {/* Optional: Add an overlay with text */}
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                  <h2 className="text-2xl md:text-4xl font-bold">
-                    Slide {index + 1}
-                  </h2>
+                {/* Modern Overlay with Animated Text */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-gray-900 flex items-center justify-center">
+                  {/* <h2 className="text-3xl md:text-5xl font-extrabold text-white animate-fadeIn">
+                    Beautiful Slide {index + 1}
+                  </h2> */}
                 </div>
               </div>
             ))}
