@@ -7,11 +7,12 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 const Hero: React.FC = () => {
   const images = [
-    "/images/lauer-badge.png",
-    "/images/lauer-hero-cover.png",
-    "/images/lauer-badge.png",
-    "/images/lauer-hero-cover.png",
-    "/images/lauer-badge.png",
+    "/images/1.jpg",
+    "/images/2.jpg",
+    "/images/3.jpg",
+    "/images/4.jpg",
+    "/images/5.jpg",
+    "/images/6.jpg",
   ];
 
   // Custom Arrow Components
