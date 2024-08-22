@@ -2,7 +2,8 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gradient-to-r from-blue-900 via-purple-900 to-gray-900 text-white py-12">
+     
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -61,7 +62,6 @@ const Footer: React.FC = () => {
             <h3 className="font-bold text-xl mb-4">Stay Updated</h3>
             <div className="space-y-2 text-gray-400">
               <a href="#" className="hover:text-white transition flex items-center">
-                {/* Add your social media icons here */}
                 <span className="ml-2">Facebook</span>
               </a>
               <a href="#" className="hover:text-white transition flex items-center">

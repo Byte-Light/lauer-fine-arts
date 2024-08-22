@@ -2,7 +2,7 @@ import React from "react";
 
 const Trusted: React.FC = () => {
   return (
-    <div className="relative flex flex-col items-center justify-center py-16 px-4 bg-white">
+    <div className="relative flex flex-col items-center justify-center py-16 px-4 bg-gray-800">
       {/* Background Text */}
       <h1 className="text-7xl sm:text-9xl font-bold text-gray-200 absolute inset-0 flex items-center justify-center">
         TRUSTED

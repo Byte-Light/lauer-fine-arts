@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
     const { onClick } = props;
     return (
       <div
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-3xl cursor-pointer z-20"
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 rounded-full p-2 cursor-pointer z-20 hover:bg-opacity-75 transition-all duration-300"
         onClick={onClick}
       >
         <FaArrowRight />
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
     const { onClick } = props;
     return (
       <div
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-3xl cursor-pointer z-20"
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 rounded-full p-2 cursor-pointer z-20 hover:bg-opacity-75 transition-all duration-300"
         onClick={onClick}
       >
         <FaArrowLeft />
@@ -43,31 +43,33 @@ const Hero: React.FC = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     pauseOnHover: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     appendDots: (dots: any) => (
       <div style={{ padding: "10px" }}>
-        <ul style={{ margin: "0px" }}>{dots}</ul>
+        <ul style={{ margin: "0px", display: "flex", justifyContent: "center", gap: "8px" }}>
+          {dots}
+        </ul>
       </div>
     ),
-    customPaging: (i: any) => (
+    customPaging: () => (
       <div
-        className="w-4 h-4 bg-gray-400 rounded-full inline-block"
+        className="w-3 h-3 bg-white rounded-full"
         style={{
-          border: "1px solid #fff",
+          border: "2px solid #4A90E2",
         }}
       ></div>
     ),
   };
 
   return (
-    <section className="relative bg-gray-800 text-white py-12">
+    <section className="relative bg-gray-900 text-white py-12">
       <div className="container mx-auto">
         <div className="slider-container relative">
           <Slider {...settings}>
@@ -79,10 +81,10 @@ const Hero: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
                 {/* Modern Overlay with Animated Text */}
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-gray-900 flex items-center justify-center">
-                  {/* <h2 className="text-3xl md:text-5xl font-extrabold text-white animate-fadeIn">
-                    Beautiful Slide {index + 1}
-                  </h2> */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black flex items-center justify-center">
+                  <h2 className="text-3xl md:text-5xl font-extrabold text-white animate-fadeIn opacity-0 transition-opacity duration-1000 delay-300">
+                    Stunning Art {index + 1}
+                  </h2>
                 </div>
               </div>
             ))}

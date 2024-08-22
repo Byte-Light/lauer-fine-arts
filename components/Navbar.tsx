@@ -1,4 +1,3 @@
-// components/Navbar.tsx
 "use client"
 import React, { useState } from "react";
 import Link from "next/link";
@@ -10,8 +9,9 @@ type NavLinkProps = {
 
 const NavLink: React.FC<NavLinkProps> = ({ href, children }) => {
   return (
-    <Link href={href} className="hover:text-gray-400 transition duration-300">
-      {children}
+    <Link href={href}  className="text-lg text-gray-300 hover:text-white transition-colors duration-300 ease-in-out">
+        {children}
+
     </Link>
   );
 };
@@ -24,10 +24,10 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-gray-800 text-white py-4 sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-purple-800 via-indigo-800 to-blue-800 text-white py-4 sticky top-0 z-50 shadow-lg">
       <div className="container mx-auto flex flex-wrap justify-between items-center">
         {/* Brand Name */}
-        <div className="text-lg font-bold tracking-widest">
+        <div className="text-2xl font-extrabold tracking-widest">
           LAUER FINE ART
         </div>
 
@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
             className="text-white focus:outline-none"
           >
             <svg
-              className="w-6 h-6"
+              className="w-8 h-8"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -58,9 +58,9 @@ const Navbar: React.FC = () => {
         <div
           className={`${
             isOpen ? "block" : "hidden"
-          } w-full md:flex md:space-x-8 md:w-auto`}
+          } w-full md:flex md:items-center md:w-auto mt-4 md:mt-0`}
         >
-          <div className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
+          <div className="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0">
             <NavLink href="/shop-art">Shop Art</NavLink>
             <NavLink href="/about">About Lauer Fine Art</NavLink>
             <NavLink href="/contact">Contact</NavLink>
